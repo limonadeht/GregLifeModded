@@ -1,0 +1,20 @@
+#langs
+itemGroup.gl.GLTab=GregLife-Mod
+
+tile.gl.blockMachine.1.name=§9Solar Generator
+tile.gl.blockMachine.2.name=§9Advanced Solar Generator
+tile.gl.blockMachine.3.name=§9GregLife Solar Generator
+tile.gl.blockMachine.4.name=§9Fluid Tank
+tile.gl.blockMachine.6.name=§9Advanced Fluid Tank
+tile.gl.blockMachine.7.name=§9GregLife Fluid Tank
+tile.gl.blockMachine.5.name=§9Burning Generator
+
+item.gl.itemWrench.name=§9Wrench (Uncharged)
+item.gl.itemWrench.charged.name=§9Wrench (Charged)
+item.gl.itemUpgradeEnergy.name=§9Upgrade (Energy)
+
+item.gl.itemResources.solarCore.t1.name=§9Solar Core
+item.gl.itemResources.solarCore.t2.name=§9Advanced Solar Core
+item.gl.itemResources.solarCore.t3.name=§9GregLife Solar Core
+item.gl.itemResources.generatorCore.name=§9Generator Core
+
