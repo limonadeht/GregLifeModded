@@ -3,12 +3,18 @@ package greglife.handler;
 import cpw.mods.fml.common.network.IGuiHandler;
 import greglife.gui.ContainerAdvancedNeutron;
 import greglife.gui.ContainerBurningGenerator;
+import greglife.gui.ContainerChikenCapturer;
+import greglife.gui.ContainerEggCollector;
 import greglife.gui.ContainerElectricFurnace;
 import greglife.gui.GuiAdvancedNeutron;
 import greglife.gui.GuiBurningGenerator;
+import greglife.gui.GuiChikenCapturer;
+import greglife.gui.GuiEggCollector;
 import greglife.gui.GuiElectricFurnace;
 import greglife.tileentity.TileAdvancedNeutron;
 import greglife.tileentity.TileBurningGenerator;
+import greglife.tileentity.TileChikenCapturer;
+import greglife.tileentity.TileEggCollector;
 import greglife.tileentity.TileElectricFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -29,6 +35,12 @@ public class GuiHandler implements IGuiHandler{
 		if(tile instanceof TileElectricFurnace){
 			return new ContainerElectricFurnace(player.inventory, (TileElectricFurnace)tile);
 		}
+		if(tile instanceof TileEggCollector){
+			return new ContainerEggCollector(player.inventory, (TileEggCollector)tile);
+		}
+		if(tile instanceof TileChikenCapturer){
+			return new ContainerChikenCapturer(player.inventory, (TileChikenCapturer)tile);
+		}
 
 		return null;
 	}
@@ -45,6 +57,12 @@ public class GuiHandler implements IGuiHandler{
 		}
 		if(tile instanceof TileElectricFurnace){
 			return new GuiElectricFurnace(player.inventory, (TileElectricFurnace)tile);
+		}
+		if(tile instanceof TileEggCollector){
+			return new GuiEggCollector(player.inventory, (TileEggCollector)tile);
+		}
+		if(tile instanceof TileChikenCapturer){
+			return new GuiChikenCapturer(player.inventory, (TileChikenCapturer)tile);
 		}
 
 		return null;

@@ -12,6 +12,8 @@ public class EnergyStorage implements IEnergyStorage{
 	protected int transferReceive;
 	protected int transferExtract;
 
+	protected ForgeDirection lastReceiveDirection;
+
 	public EnergyStorage(int energyCapacity)
 	  {
 	    this(energyCapacity, energyCapacity, energyCapacity);

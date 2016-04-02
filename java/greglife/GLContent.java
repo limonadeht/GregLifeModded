@@ -3,20 +3,29 @@ package greglife;
 import cpw.mods.fml.common.registry.GameRegistry;
 import greglife.block.BlockAdvancedNeutron;
 import greglife.block.BlockBurningGenerator;
+import greglife.block.BlockChikenCapturer;
+import greglife.block.BlockEggCollector;
 import greglife.block.BlockElectricFurnace;
+import greglife.block.BlockEnergyCable;
 import greglife.block.BlockSolarPanel;
 import greglife.block.BlockTank;
 import greglife.item.ItemAdvancedNeutron;
 import greglife.item.ItemBase;
 import greglife.item.ItemBurningGenerator;
+import greglife.item.ItemChiken;
+import greglife.item.ItemEggCollector;
 import greglife.item.ItemElectricFurnace;
+import greglife.item.ItemEnergyCable;
 import greglife.item.ItemSolarPanel;
 import greglife.item.ItemTank;
 import greglife.item.ItemUpgradeEnergy;
 import greglife.item.ItemWrench;
 import greglife.tileentity.TileAdvancedNeutron;
 import greglife.tileentity.TileBurningGenerator;
+import greglife.tileentity.TileChikenCapturer;
+import greglife.tileentity.TileEggCollector;
 import greglife.tileentity.TileElectricFurnace;
+import greglife.tileentity.TileEnergyCable;
 import greglife.tileentity.TileSolarPanel;
 import greglife.tileentity.TileTank;
 import net.minecraft.block.Block;
@@ -35,10 +44,14 @@ public class GLContent {
 	public static Block blockBurningGenerator;
 	public static Block blockAdvancedNeutron;
 	public static Block blockElectricFurnace;
+	public static Block blockEggCollector;
+	public static Block blockChikenCapturer;
+	public static Block blockEnergyCable;
 
 	public static Item itemWrench;
 	public static Item itemWrenchCharged;
 	public static Item itemUpgradeEnergy;
+	public static Item itemChiken;
 
 	public static Item itemResources;
 
@@ -49,6 +62,7 @@ public class GLContent {
 		GameRegistry.registerItem(itemWrench, "gl.itemWrench");
 		GameRegistry.registerItem(itemWrenchCharged, "gl.itemWrench.charged");
 		GameRegistry.registerItem(itemUpgradeEnergy, "gl.itemUpgradeEnergy");
+		GameRegistry.registerItem(itemChiken, "gl.itemChiken");
 
 		GameRegistry.registerBlock(blockSolarPanel, ItemSolarPanel.class, "gl.blockMachine.1");
 		GameRegistry.registerBlock(blockSolarPanelAdvanced, ItemSolarPanel.class, "gl.blockMachine.2");
@@ -59,6 +73,9 @@ public class GLContent {
 		GameRegistry.registerBlock(blockBurningGenerator, ItemBurningGenerator.class, "gl.blockMachine.5");
 		GameRegistry.registerBlock(blockAdvancedNeutron, ItemAdvancedNeutron.class, "gl.blockMachine.8");
 		GameRegistry.registerBlock(blockElectricFurnace, ItemElectricFurnace.class, "gl.blockMachine.9");
+		GameRegistry.registerBlock(blockEggCollector, ItemEggCollector.class, "gl.blockMachine.10");
+		GameRegistry.registerBlock(blockChikenCapturer, "gl.blockMachine.11");
+		GameRegistry.registerBlock(blockEnergyCable, ItemEnergyCable.class, "gl.blockMachine.12");
 
 		GameRegistry.registerTileEntity(TileSolarPanel.class, "gl.tile.blockMachine.1");
 		GameRegistry.registerTileEntity(TileSolarPanel.Advanced.class, "gl.blockMachine.2");
@@ -69,6 +86,9 @@ public class GLContent {
 		GameRegistry.registerTileEntity(TileBurningGenerator.class, "gl.blockMachine.5");
 		GameRegistry.registerTileEntity(TileAdvancedNeutron.class, "gl.blockMachine.8");
 		GameRegistry.registerTileEntity(TileElectricFurnace.class, "gl.blockMachine.9");
+		GameRegistry.registerTileEntity(TileEggCollector.class, "gl.blockMachine.10");
+		GameRegistry.registerTileEntity(TileChikenCapturer.class, "gl.blockMachine.11");
+		GameRegistry.registerTileEntity(TileEnergyCable.class, "gl.blockMachine.12");
 	}
 
 	static void addContents(){
@@ -82,10 +102,14 @@ public class GLContent {
 		blockBurningGenerator = new BlockBurningGenerator("gl.blockMachine.5", 300);
 		blockAdvancedNeutron = new BlockAdvancedNeutron("gl.blockMachine.8");
 		blockElectricFurnace = new BlockElectricFurnace("gl.blockMachine.9", 10000000, false);
+		blockEggCollector = new BlockEggCollector("gl.blockMachine.10");
+		blockChikenCapturer = new BlockChikenCapturer("gl.blockMachine.11", 1000000);
+		blockEnergyCable = new BlockEnergyCable("gl.blockMachine.12");
 
 		itemWrench = new ItemWrench();
 		itemWrenchCharged = new ItemWrench.Charged();
 		itemUpgradeEnergy = new ItemUpgradeEnergy("gl.itemUpgradeEnergy");
+		itemChiken = new ItemChiken("gl.itemChiken");
 
 		itemResources = new ItemBase("itemResources", 64,
 				"solarCore.t1", "solarCore.t2", "solarCore.t3",

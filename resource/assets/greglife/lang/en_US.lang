@@ -10,6 +10,9 @@ tile.gl.blockMachine.7.name=§9GregLife Fluid Tank
 tile.gl.blockMachine.5.name=§9Burning Generator
 tile.gl.blockMachine.8.name=§9Advanced Neutron Collector
 tile.gl.blockMachine.9.name=§9Electric Furnace
+tile.gl.blockMachine.10.name=§9Egg Collector
+tile.gl.blockMachine.11.name=§9Chiken Capturer
+tile.gl.blockMachine.12.name=§9Energy Cable
 
 item.gl.itemWrench.name=§9Wrench (Uncharged)
 item.gl.itemWrench.charged.name=§9Wrench (Charged)
@@ -19,4 +22,5 @@ item.gl.itemResources.solarCore.t1.name=§9Solar Core
 item.gl.itemResources.solarCore.t2.name=§9Advanced Solar Core
 item.gl.itemResources.solarCore.t3.name=§9GregLife Solar Core
 item.gl.itemResources.generatorCore.name=§9Generator Core
+item.gl.itemChiken.name=§9Chiken Soul
 
