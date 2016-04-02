@@ -8,6 +8,8 @@ tile.gl.blockMachine.4.name=§9Fluid Tank
 tile.gl.blockMachine.6.name=§9Advanced Fluid Tank
 tile.gl.blockMachine.7.name=§9GregLife Fluid Tank
 tile.gl.blockMachine.5.name=§9Burning Generator
+tile.gl.blockMachine.8.name=§9Advanced Neutron Collector
+tile.gl.blockMachine.9.name=§9Electric Furnace
 
 item.gl.itemWrench.name=§9Wrench (Uncharged)
 item.gl.itemWrench.charged.name=§9Wrench (Charged)

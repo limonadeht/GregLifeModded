@@ -29,7 +29,7 @@ dependencies {
 }
  
 archivesBaseName = "GregLife"
-version = "Beta0.2.0"
+version = "Beta0.4.0"
 minecraft.version = "1.7.10-10.13.4.1558-1.7.10"
  
 [compileJava, compileTestJava].each {

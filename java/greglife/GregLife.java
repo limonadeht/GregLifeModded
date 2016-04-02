@@ -7,6 +7,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import greglife.handler.GuiHandler;
+import greglife.recipe.GLRecipe;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
@@ -36,8 +37,11 @@ public class GregLife {
 	@SuppressWarnings("static-access")
 	@EventHandler
 	public void Init(FMLPreInitializationEvent e){
+
 		GLContent.instance.addContents();
 		GLContent.instance.load();
+
+		GLRecipe.instance.loadRecipe();
 
 		proxy.registerRenderers();
 		proxy.registerTileEntity();
