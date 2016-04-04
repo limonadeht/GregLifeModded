@@ -6,16 +6,19 @@ import greglife.gui.ContainerBurningGenerator;
 import greglife.gui.ContainerChikenCapturer;
 import greglife.gui.ContainerEggCollector;
 import greglife.gui.ContainerElectricFurnace;
+import greglife.gui.ContainerStorage;
 import greglife.gui.GuiAdvancedNeutron;
 import greglife.gui.GuiBurningGenerator;
 import greglife.gui.GuiChikenCapturer;
 import greglife.gui.GuiEggCollector;
 import greglife.gui.GuiElectricFurnace;
+import greglife.gui.GuiStorage;
 import greglife.tileentity.TileAdvancedNeutron;
 import greglife.tileentity.TileBurningGenerator;
 import greglife.tileentity.TileChikenCapturer;
 import greglife.tileentity.TileEggCollector;
 import greglife.tileentity.TileElectricFurnace;
+import greglife.tileentity.TileStorage;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -41,6 +44,9 @@ public class GuiHandler implements IGuiHandler{
 		if(tile instanceof TileChikenCapturer){
 			return new ContainerChikenCapturer(player.inventory, (TileChikenCapturer)tile);
 		}
+		if(tile instanceof TileStorage){
+			return new ContainerStorage(player.inventory, (TileStorage)tile);
+		}
 
 		return null;
 	}
@@ -63,6 +69,9 @@ public class GuiHandler implements IGuiHandler{
 		}
 		if(tile instanceof TileChikenCapturer){
 			return new GuiChikenCapturer(player.inventory, (TileChikenCapturer)tile);
+		}
+		if(tile instanceof TileStorage){
+			return new GuiStorage(player.inventory, (TileStorage)tile);
 		}
 
 		return null;

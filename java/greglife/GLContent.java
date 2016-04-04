@@ -8,6 +8,7 @@ import greglife.block.BlockEggCollector;
 import greglife.block.BlockElectricFurnace;
 import greglife.block.BlockEnergyCable;
 import greglife.block.BlockSolarPanel;
+import greglife.block.BlockStorage;
 import greglife.block.BlockTank;
 import greglife.item.ItemAdvancedNeutron;
 import greglife.item.ItemBase;
@@ -27,6 +28,7 @@ import greglife.tileentity.TileEggCollector;
 import greglife.tileentity.TileElectricFurnace;
 import greglife.tileentity.TileEnergyCable;
 import greglife.tileentity.TileSolarPanel;
+import greglife.tileentity.TileStorage;
 import greglife.tileentity.TileTank;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -47,6 +49,7 @@ public class GLContent {
 	public static Block blockEggCollector;
 	public static Block blockChikenCapturer;
 	public static Block blockEnergyCable;
+	public static Block blockStorage;
 
 	public static Item itemWrench;
 	public static Item itemWrenchCharged;
@@ -76,6 +79,7 @@ public class GLContent {
 		GameRegistry.registerBlock(blockEggCollector, ItemEggCollector.class, "gl.blockMachine.10");
 		GameRegistry.registerBlock(blockChikenCapturer, "gl.blockMachine.11");
 		GameRegistry.registerBlock(blockEnergyCable, ItemEnergyCable.class, "gl.blockMachine.12");
+		GameRegistry.registerBlock(blockStorage, "gl.blockMachine.13");
 
 		GameRegistry.registerTileEntity(TileSolarPanel.class, "gl.tile.blockMachine.1");
 		GameRegistry.registerTileEntity(TileSolarPanel.Advanced.class, "gl.blockMachine.2");
@@ -89,6 +93,7 @@ public class GLContent {
 		GameRegistry.registerTileEntity(TileEggCollector.class, "gl.blockMachine.10");
 		GameRegistry.registerTileEntity(TileChikenCapturer.class, "gl.blockMachine.11");
 		GameRegistry.registerTileEntity(TileEnergyCable.class, "gl.blockMachine.12");
+		GameRegistry.registerTileEntity(TileStorage.class, "gl.blockMachine.13");
 	}
 
 	static void addContents(){
@@ -105,6 +110,7 @@ public class GLContent {
 		blockEggCollector = new BlockEggCollector("gl.blockMachine.10");
 		blockChikenCapturer = new BlockChikenCapturer("gl.blockMachine.11", 1000000);
 		blockEnergyCable = new BlockEnergyCable("gl.blockMachine.12");
+		blockStorage = new BlockStorage("gl.blockMachine.13");
 
 		itemWrench = new ItemWrench();
 		itemWrenchCharged = new ItemWrench.Charged();

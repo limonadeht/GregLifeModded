@@ -13,6 +13,7 @@ tile.gl.blockMachine.9.name=§9Electric Furnace
 tile.gl.blockMachine.10.name=§9Egg Collector
 tile.gl.blockMachine.11.name=§9Chiken Capturer
 tile.gl.blockMachine.12.name=§9Energy Cable
+tile.gl.blockMachine.13.name=§9Storage
 
 item.gl.itemWrench.name=§9Wrench (Uncharged)
 item.gl.itemWrench.charged.name=§9Wrench (Charged)
