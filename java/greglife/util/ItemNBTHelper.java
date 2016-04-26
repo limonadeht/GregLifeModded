@@ -5,6 +5,16 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public final class ItemNBTHelper {
 
+	/**
+	 * Checks if the passed ItemStack contains the given tag in its NBTData
+	 * @param itemStack The stack
+	 * @param keyName The key for the tag
+	 * @return True if the stack contains the key
+	 */
+	public static boolean hasTag(ItemStack itemStack, String keyName){
+		return itemStack != null && itemStack.stackTagCompound != null && itemStack.stackTagCompound.hasKey(keyName);
+	}
+
 	public static NBTTagCompound getCompound(ItemStack stack){
 		if (stack.getTagCompound() == null) stack.setTagCompound(new NBTTagCompound());
 		return stack.getTagCompound();

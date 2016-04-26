@@ -16,7 +16,7 @@ public class ContainerStorage extends Container{
 
 		for(int k = 0; k < 9; k++){
 			for(int i = 0; i < 13; i++){
-				this.addSlotToContainer(new Slot(tileentity, 0, 11 + k * 18, 15 + i * 18));
+				this.addSlotToContainer(new Slot(tileentity, k + i * 9 + 0, 11 + i * 18, 15 + k * 18));
 			}
 		}
 

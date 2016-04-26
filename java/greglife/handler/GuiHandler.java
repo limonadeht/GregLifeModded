@@ -4,20 +4,25 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import greglife.gui.ContainerAdvancedNeutron;
 import greglife.gui.ContainerBurningGenerator;
 import greglife.gui.ContainerChikenCapturer;
+import greglife.gui.ContainerCosmosBag;
 import greglife.gui.ContainerEggCollector;
 import greglife.gui.ContainerElectricFurnace;
+import greglife.gui.ContainerGregLifeInfuser;
 import greglife.gui.ContainerStorage;
 import greglife.gui.GuiAdvancedNeutron;
 import greglife.gui.GuiBurningGenerator;
 import greglife.gui.GuiChikenCapturer;
+import greglife.gui.GuiCosmosBag;
 import greglife.gui.GuiEggCollector;
 import greglife.gui.GuiElectricFurnace;
+import greglife.gui.GuiGregLifeInfuser;
 import greglife.gui.GuiStorage;
 import greglife.tileentity.TileAdvancedNeutron;
 import greglife.tileentity.TileBurningGenerator;
 import greglife.tileentity.TileChikenCapturer;
 import greglife.tileentity.TileEggCollector;
 import greglife.tileentity.TileElectricFurnace;
+import greglife.tileentity.TileGregLifeInfuser;
 import greglife.tileentity.TileStorage;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -47,6 +52,13 @@ public class GuiHandler implements IGuiHandler{
 		if(tile instanceof TileStorage){
 			return new ContainerStorage(player.inventory, (TileStorage)tile);
 		}
+		if(tile instanceof TileGregLifeInfuser){
+			return new ContainerGregLifeInfuser((TileGregLifeInfuser)world.getTileEntity(x, y, z), player, 176, 200);
+		}
+
+		if(ID == 6){
+			return new ContainerCosmosBag(player.inventory, world);
+		}
 
 		return null;
 	}
@@ -72,6 +84,13 @@ public class GuiHandler implements IGuiHandler{
 		}
 		if(tile instanceof TileStorage){
 			return new GuiStorage(player.inventory, (TileStorage)tile);
+		}
+		if(tile instanceof TileGregLifeInfuser){
+			return new GuiGregLifeInfuser(player, world, x, y ,z);
+		}
+
+		if(ID == 6){
+			return new GuiCosmosBag(player.inventory, world);
 		}
 
 		return null;

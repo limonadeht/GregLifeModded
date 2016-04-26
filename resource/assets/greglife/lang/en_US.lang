@@ -14,6 +14,23 @@ tile.gl.blockMachine.10.name=§9Egg Collector
 tile.gl.blockMachine.11.name=§9Chiken Capturer
 tile.gl.blockMachine.12.name=§9Energy Cable
 tile.gl.blockMachine.13.name=§9Storage
+tile.gl.blockMachine.14.name=§9Lava Creator
+tile.gl.blockMachine.15.name=§dCreative Energy Capacitor
+tile.gl.blockMachine.16.name=§9Fluid Cable
+tile.gl.blockMachine.17.name=§9Stone Creator
+tile.gl.blockMachine.18.name=§9Sprinkler
+tile.gl.blockInfuser.name=§9Upgrade Infuser
+
+tile.gl.blockOres.name=§9GregLife Ore
+tile.gl.blockSpecial.name=§9Time Torch
+tile.gl.blockSapling.name=§9GregLife Sapling
+tile.gl.blockLog.name=§9GregLife Log
+tile.gl.blockPlanks.name=§9GregLife Planks
+tile.gl.blockLeave.name=§9GregLife Leave
+
+tile.greglife:blockFluidGL.name=§Liquid GregLife
+
+fluid.gl.blockLiquidGL=Liquid GregLife
 
 item.gl.itemWrench.name=§9Wrench (Uncharged)
 item.gl.itemWrench.charged.name=§9Wrench (Charged)
@@ -24,4 +41,26 @@ item.gl.itemResources.solarCore.t2.name=§9Advanced Solar Core
 item.gl.itemResources.solarCore.t3.name=§9GregLife Solar Core
 item.gl.itemResources.generatorCore.name=§9Generator Core
 item.gl.itemChiken.name=§9Chiken Soul
+item.gl.itemWPchisel.name=§9Wall-Passing Chisel
+item.gl.itemCosmosBag.name=§9Cosmos Bag
+item.gl.itemGLPick.name=Tool Of GregLife
+item.gl.itemPick.name=§9GregLife Pickaxe
 
+item.gl.itemGem.name=§9GregLife Gem
+item.gl.itemIngot.name=§9GregLife Ingot
+item.gl.itemNugget.name=§9GregLife Nugget
+item.gl.itemUpgradeBook.name=§9Upgrade Book
+item.greglife:liquidGLBucket.name=§9Liquid GregLife Bucket
+
+gl.blockFlower.electroKassi.name=§9Electrokassi
+gl.blockFlower.greglifeEndoFlame.name=§9GregLife Endo Flame
+gl.blockFlower.greglifePureDaisy.name=§9GregLife Pure Daisy
+
+gl.tile.flower.electroKassi.lore=-=[25000 RF >>> 500 Mana]=-
+gl.tile.flower.greglifeEndoFlame.lore=The Advanced Endoflame!
+gl.tile.flower.greglifePureDaisy.lore=The Advanced Pure Daisy!
+
+entity.gl.entityFrozenItem.name=Frozen Item
+
+gui.infuser.help=Help
+gui.infuser.start=Start

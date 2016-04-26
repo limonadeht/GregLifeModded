@@ -149,6 +149,7 @@ public class TileTank extends TileEntityBase implements IFluidHandler{
 
 		public Advanced(int tankCapacity){
 			super(tankCapacity);
+			this.tank.setCapacity(50000000);
 		}
 	}
 
@@ -160,6 +161,7 @@ public class TileTank extends TileEntityBase implements IFluidHandler{
 
 		public GregLife(int tankCapacity){
 			super(tankCapacity);
+			this.tank.setCapacity(100000000);
 		}
 	}
 }

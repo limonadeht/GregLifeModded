@@ -2,7 +2,9 @@ package greglife.recipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import greglife.GLContent;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class GLRecipe {
@@ -29,6 +31,15 @@ public class GLRecipe {
 						'A', new ItemStack(Items.iron_ingot),
 						'B', new ItemStack(GLContent.itemWrench),
 						'C', new ItemStack(Items.diamond_pickaxe)
+				});
+
+		GameRegistry.addRecipe(new ItemStack(GLContent.itemWPchisel),
+				new Object[]{
+						"AAA",
+						"ABA",
+						"AAA",
+						'A', new ItemStack(Item.getItemFromBlock(Blocks.diamond_block)),
+						'B', new ItemStack(GLContent.itemWrenchCharged)
 				});
 	}
 }

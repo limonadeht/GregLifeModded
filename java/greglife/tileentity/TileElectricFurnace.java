@@ -104,6 +104,30 @@ public class TileElectricFurnace extends TileEntityBase implements IEnergyHandle
         }
     }
 
+	public int getBurnSpeed(){
+		return this.burnSpeed;
+	}
+
+	public int addBurnSpeed(int amount){
+		return this.burnSpeed += amount;
+	}
+
+	public int removeBurnSpeed(int amount){
+		if(this.burnSpeed < 1){
+			return this.burnSpeed;
+		}
+		return this.burnSpeed -= amount;
+	}
+
+	public void reciveButtonEvent(byte buttonId){
+		if(buttonId == 0){
+			this.addBurnSpeed(1);
+		}
+		if(buttonId == 1){
+			this.removeBurnSpeed(1);
+		}
+	}
+
 	public boolean isUpgrade(){
 		if(this.getStackInSlot(1) != null){
 			if(this.getStackInSlot(1).getItem() == GLContent.itemUpgradeEnergy){

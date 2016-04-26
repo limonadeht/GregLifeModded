@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 import org.lwjgl.opengl.GL11;
 
+import greglife.GregLife;
+import greglife.network.ButtonPacket;
 import greglife.tileentity.TileElectricFurnace;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -42,7 +44,7 @@ public class GuiElectricFurnace extends GuiContainer{
 	    }else{
 		    this.fontRendererObj.drawString("Burning: " + EnumChatFormatting.RED + "Disabled", 9, 50, 13487565);
 	    }
-	    //this.fontRendererObj.drawString("Speed: " + furnace.getSpeed(), 63, 74, 13487565);
+	    this.fontRendererObj.drawString("Speed: " + furnace.getBurnSpeed(), 63, 74, 13487565);
 	}
 
 	@Override
@@ -125,23 +127,24 @@ public class GuiElectricFurnace extends GuiContainer{
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void initGui(){
 		super.initGui();
-		/*buttonList.clear();
+		buttonList.clear();
 
 		buttonList.add(new GuiButton(0, this.guiLeft +  79, this.guiTop + 73, 18, 18, "+"));
-		buttonList.add(new GuiButton(1, this.guiLeft +  43, this.guiTop + 73, 18, 18, "-"));*/
+		buttonList.add(new GuiButton(1, this.guiLeft +  43, this.guiTop + 73, 18, 18, "-"));
 	}
 
 	@Override
 	protected void actionPerformed(GuiButton button){
-		/*if(button.id == 0){
-			this.furnace.addSpeed(1);
+		if(button.id == 0){
+			GregLife.network.sendToServer(new ButtonPacket(ButtonPacket.ID_ELECTRICFURNACE0, false));
 		}
 		if(button.id == 1){
-			this.furnace.removeSpeed(1);
-		}*/
+			GregLife.network.sendToServer(new ButtonPacket(ButtonPacket.ID_ELECTRICFURNACE1, false));
+		}
 	}
 
 	@Override

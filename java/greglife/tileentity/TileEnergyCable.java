@@ -36,7 +36,7 @@ public class TileEnergyCable extends TileEntityBase implements IEnergyHandler{
 		for (ForgeDirection direction : ForgeDirection.VALID_DIRECTIONS)
 		{
 			TileEntity tileEntity = getWorldObj().getTileEntity(this.xCoord + direction.offsetX, this.yCoord + direction.offsetY, this.zCoord + direction.offsetZ);
-			if (!(tileEntity instanceof TileSolarPanel)) {
+			if (!(tileEntity instanceof TileEnergyCable)) {
 				if ((tileEntity instanceof IEnergyReceiver)) {
 					if (this.energyStorage.getEnergyStored() > 0)
 					{

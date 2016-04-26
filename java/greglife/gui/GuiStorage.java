@@ -11,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class GuiStorage extends GuiContainer{
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation("greglife", "textures/gui/guiStorage.png");
+	//public static final ResourceLocation TEXTURE = new ResourceLocation("greglife", "textures/gui/guiBurn2.png");
 
 	public TileStorage storage;
 
@@ -32,5 +33,9 @@ public class GuiStorage extends GuiContainer{
 		GL11.glColor4f(1F, 1F, 1F, 1F);
 
 		Minecraft.getMinecraft().getTextureManager().bindTexture(TEXTURE);
+
+		int k = (this.width - this.xSize) / 2;
+        int l = (this.height - this.ySize) / 2;
+        this.drawTexturedModalRect(k, l, 0, 0, xSize, ySize);
 	}
 }

@@ -64,21 +64,21 @@ public class TileSolarPanel extends TileEntityBase implements IEnergyHandler{
 	  }
 
 	public void transferEnergy()
-	  {
-	    for (ForgeDirection direction : ForgeDirection.VALID_DIRECTIONS)
-	    {
-	      TileEntity tileEntity = getWorldObj().getTileEntity(this.xCoord + direction.offsetX, this.yCoord + direction.offsetY, this.zCoord + direction.offsetZ);
-	      if (!(tileEntity instanceof TileSolarPanel)) {
-	        if ((tileEntity instanceof IEnergyReceiver)) {
-	          if (this.energyStorage.getEnergyStored() > 0)
-	          {
-	            IEnergyReceiver receiver = (IEnergyReceiver)tileEntity;
-	            this.energyStorage.sendEnergy(receiver, direction.getOpposite());
-	          }
-	        }
-	      }
-	    }
-	  }
+	{
+		for (ForgeDirection direction : ForgeDirection.VALID_DIRECTIONS)
+		{
+			TileEntity tileEntity = getWorldObj().getTileEntity(this.xCoord + direction.offsetX, this.yCoord + direction.offsetY, this.zCoord + direction.offsetZ);
+			if (!(tileEntity instanceof TileSolarPanel)) {
+				if ((tileEntity instanceof IEnergyReceiver)) {
+					if (this.energyStorage.getEnergyStored() > 0)
+					{
+						IEnergyReceiver receiver = (IEnergyReceiver)tileEntity;
+						this.energyStorage.sendEnergy(receiver, direction.getOpposite());
+					}
+				}
+			}
+		}
+	}
 
 	@Override
 	public void readCustomNBT(NBTTagCompound nbt, boolean descPacket)

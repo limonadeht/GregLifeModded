@@ -148,6 +148,10 @@ public class ContainerElectricFurnace extends Container {
         return itemstack;
     }
 
+	public TileElectricFurnace getTileEF(){
+		return this.furnace;
+	}
+
 	/*@Override
 	public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int clickedIndex){
 		return null;

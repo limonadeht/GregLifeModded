@@ -14,6 +14,7 @@ public class TileEnergyCableRenderer extends TileEntitySpecialRenderer{
 
 	public static final TileEnergyCableRenderer instance = new TileEnergyCableRenderer();
 	ResourceLocation TEXTURE = new ResourceLocation("greglife", "textures/models/cableEnergy.png");
+	ResourceLocation TEXTURE2 = new ResourceLocation("greglife", "textures/models/cableEnergy2.png");
 
 	@Override
 	public void renderTileEntityAt(TileEntity tileentity, double xOffset, double yOffset, double zOffset,float partialTickTime)
@@ -31,23 +32,49 @@ public class TileEnergyCableRenderer extends TileEntitySpecialRenderer{
 		GL11.glRotatef(180, 0, 0, 1);
 		if(meta == 0)
 		{
+			/*Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE2);
+			ModelCable.instance.renderMiddle();
+			if(sides[0][0]){
+				ModelEnCable.instance.renderDown();
+				ModelEnCable.instance.renderDownConnector();
+			}
+				if(sides[0][1]){
+					ModelEnCable.instance.renderUp();
+					ModelEnCable.instance.renderUpConnector();
+				}
+					if(sides[0][2]){
+						ModelEnCable.instance.renderFront();
+						ModelEnCable.instance.renderFrontConnector();
+					}
+						if(sides[0][3]){
+							ModelEnCable.instance.renderBack();
+							ModelEnCable.instance.renderBackConnector();
+						}
+							if(sides[0][4]){
+								ModelEnCable.instance.renderLeft();
+								ModelEnCable.instance.renderLeftConnector();
+							}
+								if(sides[0][5]){
+									ModelEnCable.instance.renderRight();
+									ModelEnCable.instance.renderRightConnector();
+								}
+
+			ModelEnCable.instance.renderMiddle();
+			if(sides[0][0]) ModelEnCable.instance.renderDown();
+				if(sides[0][1]) ModelEnCable.instance.renderUp();
+					if(sides[0][2]) ModelEnCable.instance.renderFront();
+						if(sides[0][3]) ModelEnCable.instance.renderBack();
+							if(sides[0][4]) ModelEnCable.instance.renderLeft();
+								if(sides[0][5]) ModelEnCable.instance.renderRight();*/
+
 			Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE);
-			//Minecraft.getMinecraft().getTextureManager().bindTexture(new ResourceLocation("advancedtorch:texture/models/cable.png"));
 			ModelCable.instance.renderMiddle();
 			if(sides[0][0]) ModelCable.instance.renderDown();
 				if(sides[0][1]) ModelCable.instance.renderUp();
-					if(sides[0][2]) ModelCable.instance.renderFront();;/*North*/
-						if(sides[0][3]) ModelCable.instance.renderBack();;/*South*/
-							if(sides[0][4]) ModelCable.instance.renderLeft();/*West*/
-								if(sides[0][5]) ModelCable.instance.renderRight();;/*East*/
-
-			/*ModelCable.instance.renderMiddle();
-			if(sides[0][0]) ModelCable.instance.renderDown();
-				if(sides[0][1]) ModelCable.instance.renderUp();
-					if(sides[0][2]) ModelCable.instance.renderLeft();North
-						if(sides[0][3]) ModelCable.instance.renderRight();South
-							if(sides[0][4]) ModelCable.instance.renderFront();West
-								if(sides[0][5]) ModelCable.instance.renderBack();East*/
+					if(sides[0][2]) ModelCable.instance.renderFront();
+						if(sides[0][3]) ModelCable.instance.renderBack();
+							if(sides[0][4]) ModelCable.instance.renderLeft();
+								if(sides[0][5]) ModelCable.instance.renderRight();
 		}
 		GL11.glPopMatrix();
 	}

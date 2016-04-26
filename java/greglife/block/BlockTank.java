@@ -17,6 +17,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidContainerRegistry;
@@ -24,14 +25,12 @@ import net.minecraftforge.fluids.FluidStack;
 
 public class BlockTank extends BlockContainer{
 
-	@SideOnly(Side.CLIENT)
-	IIcon front;
+	private IIcon textureStackedSideBase;
+	private IIcon textureStackedSide;
+	private IIcon textureBottomSide;
+	private IIcon textureTop;
 
-	@SideOnly(Side.CLIENT)
-	IIcon side;
-
-	@SideOnly(Side.CLIENT)
-	IIcon bottom;
+	private int currentPass = 0;
 
 	public int tankCapacity;
 
@@ -43,17 +42,64 @@ public class BlockTank extends BlockContainer{
 		this.setCreativeTab(greglife.GregLife.GLTab);
 		this.setResistance(100.0F);
 		this.tankCapacity = tankCapacity;
+
+        setBlockBounds(0.125F, 0.0F, 0.125F, 0.875F, 1.0F, 0.875F);
 	}
+
+	public boolean isOpaqueCube(){
+		return false;
+	}
+
+	public boolean renderAsNormalBlock(){
+		 return false;
+	}
+
+	/*public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int side){
+        return false;
+    }*/
 
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconregister){
-		this.blockIcon = iconregister.registerIcon("greglife:baseIcon_t1");
+		//this.blockIcon = iconregister.registerIcon("greglife:baseIcon_t1");
+		this.textureStackedSideBase = iconregister.registerIcon("greglife:side");
+	    this.textureStackedSide = iconregister.registerIcon("greglife:side_stacked");
+	    this.textureBottomSide = iconregister.registerIcon("greglife:side");
+	    this.textureTop = iconregister.registerIcon("greglife:topbottom");
+	}
+
+	/*@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int side, int meta){
+		return side == 1 ? this.blockIcon正面 : (side == 0 ? this.blockIcon底 : (side != meta ? this.blockIcon : this.blockIcon));
+	}*/
+
+	@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int side, int meta)
+	{
+		switch (side){
+		case 0:
+		case 1:
+			return this.textureTop;
+		}
+		return this.currentPass == 0 ? this.textureStackedSideBase : this.textureBottomSide;
 	}
 
 	@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int meta){
-		return side == 1 ? this.blockIcon/*正面*/ : (side == 0 ? this.blockIcon/*底*/ : (side != meta ? this.blockIcon : this.blockIcon));
+	public int getRenderColor(int i)
+	{
+		int[] colors = { 3959318, 11123643, 16367923, 7845606, 8323199 };
+		if ((this.currentPass == 0) || (colors.length <= i)) {
+			return super.getRenderColor(i);
+		}
+		return colors[i];
 	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public int colorMultiplier(IBlockAccess b, int p_149720_2_, int p_149720_3_, int p_149720_4_){
+		int meta = b.getBlockMetadata(p_149720_2_, p_149720_3_, p_149720_4_);
+		return super.getRenderColor(meta);
+	}
+
 
 	public TileEntity createNewTileEntity(World world, int meta){
 		return new TileTank(tankCapacity);
@@ -214,15 +260,15 @@ public class BlockTank extends BlockContainer{
 			super(name, tankCapacity);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		public void registerBlockIcons(IIconRegister iconregister){
 			this.blockIcon = iconregister.registerIcon("greglife:baseIcon_t2");
 		}
 
 		@SideOnly(Side.CLIENT)
 		public IIcon getIcon(int side, int meta){
-			return side == 1 ? this.blockIcon/*正面*/ : (side == 0 ? this.blockIcon/*底*/ : (side != meta ? this.blockIcon : this.blockIcon));
-		}
+			return side == 1 ? this.blockIcon正面 : (side == 0 ? this.blockIcon底 : (side != meta ? this.blockIcon : this.blockIcon));
+		}*/
 
 		public TileEntity createNewTileEntity(World world, int meta){
 			return new TileTank.Advanced(tankCapacity);
@@ -248,15 +294,15 @@ public class BlockTank extends BlockContainer{
 			super(name, tankCapacity);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		public void registerBlockIcons(IIconRegister iconregister){
 			this.blockIcon = iconregister.registerIcon("greglife:baseIcon_t3");
 		}
 
 		@SideOnly(Side.CLIENT)
 		public IIcon getIcon(int side, int meta){
-			return side == 1 ? this.blockIcon/*正面*/ : (side == 0 ? this.blockIcon/*底*/ : (side != meta ? this.blockIcon : this.blockIcon));
-		}
+			return side == 1 ? this.blockIcon正面 : (side == 0 ? this.blockIcon底 : (side != meta ? this.blockIcon : this.blockIcon));
+		}*/
 
 		public TileEntity createNewTileEntity(World world, int meta){
 			return new TileTank.GregLife(tankCapacity);
